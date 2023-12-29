@@ -19,7 +19,7 @@ export default function HomePage() {
         </section>
         <section className="grid grid-cols-1 min-w-[200px] w-full max-w-[400px] 820:max-w-full 820:grid-cols-3 gap-5 mx-auto">
           {specials.map((card) => (
-            <SpecialCards card={card} />
+            <SpecialCards key={card.name} card={card} />
           ))}
         </section>
       </main>
