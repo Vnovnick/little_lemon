@@ -3,9 +3,9 @@ import logo from "./images/logo.svg";
 
 export default function Nav() {
   return (
-    <nav className="flex items-center mx-auto mt-5">
+    <nav className="flex flex-wrap items-center mx-auto mt-5">
       <img className="mr-10" src={logo} />
-      <ul className="flex gap-12 font-bold">
+      <ul className="flex gap-12 font-bold flex-wrap">
         <li>
           <a>Home</a>
         </li>

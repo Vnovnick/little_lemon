@@ -7,6 +7,9 @@ module.exports = {
         mustard: "#F4CE14",
         dgreen: "#495E57",
       },
+      screens: {
+        820: "820px",
+      },
       fontSize: {
         40: ["40px", "46px"],
         64: ["64px", "68px"],
