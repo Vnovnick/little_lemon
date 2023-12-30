@@ -2,6 +2,7 @@ import React, { useReducer, useState } from "react";
 import Nav from "../Nav";
 import Footer from "../Footer";
 import BookingForm from "./BookingForm";
+import BookingHeader from "./BookingHeader";
 
 export default function BookingPage() {
   const [date, setDate] = useState(new Date());
@@ -30,6 +31,7 @@ export default function BookingPage() {
   return (
     <div className="flex flex-col h-screen">
       <Nav />
+      <BookingHeader />
       <BookingForm
         availableTimes={availableTimes}
         dispatchTimes={dispatchTimes}
