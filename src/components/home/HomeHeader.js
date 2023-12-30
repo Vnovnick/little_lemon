@@ -1,7 +1,7 @@
 import React from "react";
-import chefImg from "./images/restauranfood.jpg";
+import chefImg from "../images/restauranfood.jpg";
 
-export default function Header() {
+export default function HomeHeader() {
   return (
     <header className="mx-auto min-w-fit w-full max-w-[1440px] flex mt-10 font-display grid">
       <div className="w-full col-start-1 row-start-1 mx-auto bg-dgreen h-[330px] hidden 820:block" />

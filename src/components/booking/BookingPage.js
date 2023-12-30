@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Nav from "../Nav";
+import Footer from "../Footer";
 import BookingForm from "./BookingForm";
 
 export default function BookingPage() {
@@ -27,7 +27,6 @@ export default function BookingPage() {
     updateTimes,
     initializeTimes()
   );
-  console.log(availableTimes);
   return (
     <div className="flex flex-col h-screen">
       <Nav />
