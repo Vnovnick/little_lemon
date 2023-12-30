@@ -4,6 +4,7 @@ import cake from "../images/lemon dessert.jpg";
 import man1 from "../images/man1.jpg";
 import man2 from "../images/man2.jpg";
 import woman1 from "../images/woman1.jpg";
+import woman2 from "../images/woman2.jpg";
 
 export const specials = [
   {
@@ -47,6 +48,12 @@ export const testimonials = [
     name: "Greg",
     img: man2,
     review: "Loved the food and am looking forward to coming back!",
+  },
+  {
+    rating: "100%",
+    name: "Jane",
+    img: woman2,
+    review: "Great experience with the staff and loved every dish we had!",
   },
 ];
 

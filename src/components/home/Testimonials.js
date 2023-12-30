@@ -6,7 +6,7 @@ export default function Testimonials() {
   return (
     <section className="mx-auto w-full max-w-[1440px] flex mt-10 font-display text-center bg-dgreen py-24 flex flex-col items-center">
       <p className="text-40 text-mustard mb-5">Testimonials</p>
-      <section className="grid 820:grid-cols-3 gap-5">
+      <section className="grid 820:grid-cols-2 xl:grid-cols-4 gap-5">
         {testimonials.map((data) => (
           <section
             className="w-64 h-64 bg-[#EDEFEE] p-5 rounded-2xl"
