@@ -25,3 +25,6 @@ export const specials = [
       "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
   },
 ];
+
+export const navButtonStyling =
+  "hover:bg-dgreen p-2 rounded-xl border border-transparent hover:border-black hover:text-white";

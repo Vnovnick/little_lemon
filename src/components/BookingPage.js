@@ -27,8 +27,9 @@ export default function BookingPage() {
     updateTimes,
     initializeTimes()
   );
+  console.log(availableTimes);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-screen">
       <Nav />
       <BookingForm
         availableTimes={availableTimes}
