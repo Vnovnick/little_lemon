@@ -1,8 +1,8 @@
 import React from "react";
+import restaurant from "./images/restaurant.jpg";
 import { Link } from "react-router-dom";
-import restaurant from "../images/restaurant.jpg";
 
-export default function ConfirmedBooking() {
+export default function UnderConstruction() {
   return (
     <section className="grid w-full max-w-[600px] gap-[20px] m-auto font-body rounded-2xl">
       <img
@@ -11,14 +11,14 @@ export default function ConfirmedBooking() {
       />
       <section className="col-start-1 row-start-1 bg-dgreen m-10 rounded-2xl flex flex-col items-center justify-center gap-5">
         <p className="text-white text-40 font-body text-center">
-          Reservation Confirmed!
+          Under Construction
         </p>
         <Link
-          to="/booking"
+          to="/"
           className="px-5 py-1 bg-mustard rounded-2xl text-center font-bold"
-          aria-label="On Click Back to Reservations"
+          aria-label="On Click Back to Home"
         >
-          Back To Reservations
+          Back To Home
         </Link>
       </section>
     </section>

@@ -4,13 +4,25 @@ import { navButtonStyling } from "./definitions/homePageDefinitions";
 
 export default function Footer() {
   return (
-    <footer className="mx-auto mt-auto w-[900px] py-5">
+    <footer className="mx-auto mt-auto py-5">
       <ul className="flex gap-12 font-bold flex-wrap">
         <Link to="/" className={navButtonStyling}>
           Home
         </Link>
+        <Link to="/under-construction" className={navButtonStyling}>
+          About
+        </Link>
+        <Link to="/under-construction" className={navButtonStyling}>
+          Menu
+        </Link>
         <Link to="/booking" className={navButtonStyling}>
           Reservations
+        </Link>
+        <Link to="/under-construction" className={navButtonStyling}>
+          Order Online
+        </Link>
+        <Link to="/under-construction" className={navButtonStyling}>
+          Login
         </Link>
       </ul>
     </footer>

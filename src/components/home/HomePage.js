@@ -1,14 +1,12 @@
 import React from "react";
-import Nav from "../Nav";
 import HomeHeader from "./HomeHeader";
-import Footer from "../Footer";
 import { specials } from "../definitions/homePageDefinitions";
 import SpecialCards from "./SpecialCards";
+import Testimonials from "./Testimonials";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col">
-      <Nav />
+    <>
       <HomeHeader />
       <main className="w-full max-w-[900px] mx-auto">
         <section className="flex text-64 font-display justify-between items-center mt-5">
@@ -23,7 +21,7 @@ export default function HomePage() {
           ))}
         </section>
       </main>
-      <Footer />
-    </div>
+      <Testimonials />
+    </>
   );
 }

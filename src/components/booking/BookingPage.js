@@ -24,8 +24,7 @@ export default function BookingPage() {
 
   const submitForm = (formData) => submitApi(formData);
   return (
-    <div className="flex flex-col h-screen">
-      <Nav />
+    <>
       <BookingHeader />
       <BookingForm
         availableTimes={availableTimes}
@@ -34,7 +33,6 @@ export default function BookingPage() {
         setDate={setDate}
         submitForm={submitForm}
       />
-      <Footer />
-    </div>
+    </>
   );
 }
