@@ -26,7 +26,7 @@ describe("check BookingPage form and states", () => {
       )
     );
     const guestAmount = "4";
-    const guestsInput = screen.getByLabelText(/Number of guests/i);
+    const guestsInput = screen.getByLabelText(/No. of guests/i);
     fireEvent.change(guestsInput, { target: { value: guestAmount } });
     expect(guestsInput.value).toEqual(guestAmount);
 
