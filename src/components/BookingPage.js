@@ -5,9 +5,15 @@ import BookingForm from "./BookingForm";
 
 export default function BookingPage() {
   const [date, setDate] = useState(new Date());
-  const updateTimes = () => {};
-
-  const [availableTimes, setAvailableTimes] = useState([
+  const updateTimes = (state, action) => {
+    switch (action.type) {
+      case "changed_date":
+        return state;
+      default:
+        return state;
+    }
+  };
+  const initializeTimes = () => [
     "17:00",
     "18:00",
     "19:00",
@@ -15,12 +21,18 @@ export default function BookingPage() {
     "21:00",
     "22:00",
     "23:00",
-  ]);
+  ];
+
+  const [availableTimes, dispatchTimes] = useReducer(
+    updateTimes,
+    initializeTimes()
+  );
   return (
     <div className="flex flex-col">
       <Nav />
       <BookingForm
         availableTimes={availableTimes}
+        dispatchTimes={dispatchTimes}
         date={date}
         setDate={setDate}
       />

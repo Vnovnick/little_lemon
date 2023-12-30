@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-export default function BookingForm({ availableTimes, date, setDate }) {
+export default function BookingForm({
+  availableTimes,
+  date,
+  setDate,
+  dispatchTimes,
+}) {
   const [time, setTime] = useState("17:00");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
@@ -21,7 +26,10 @@ export default function BookingForm({ availableTimes, date, setDate }) {
         type="date"
         id="res-date"
         value={date}
-        onChange={(e) => setDate(e.target.value)}
+        onChange={(e) => {
+          setDate(e.target.value);
+          dispatchTimes({ type: "changed_date" });
+        }}
       />
       <label htmlFor="res-time" className="text-white font-bold">
         Choose time
