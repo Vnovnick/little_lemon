@@ -69,10 +69,8 @@ export default function BookingForm({
     validateGuests(guests);
     validateOccasion(occasion);
 
-    if (formIsValid) {
-      if (submitForm({ date, time, guests, occasion })) {
-        navigate("/booking-confirmed");
-      }
+    if (formIsValid && submitForm({ date, time, guests, occasion })) {
+      navigate("/booking-confirmed");
     }
   };
 
@@ -172,6 +170,7 @@ export default function BookingForm({
         type="submit"
         className="px-5 py-1 bg-mustard rounded-2xl font-bold"
         data-testid="reservation-button"
+        aria-label="On Click Reserve"
       >
         Make Your Reservation
       </button>

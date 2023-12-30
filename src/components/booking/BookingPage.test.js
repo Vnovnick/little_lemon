@@ -49,4 +49,37 @@ describe("check BookingPage form and states", () => {
     };
     expect(updateTimes(initialState, { type: "changed_date" })).toBeTruthy();
   });
+
+  test("test form validations", () => {
+    const validDate = dayjs();
+    const invalidDate = dayjs().subtract(1, "day");
+    const validTime = "17:00";
+    const invalidTime = null;
+    const validGuests = 4;
+    const invalidGuests = 0;
+    const validOccasion = "Birthday";
+    const invalidOccasion = null;
+
+    const validCheck = (
+      selectedDate,
+      selectedTime,
+      selectedGuests,
+      selectedOccasion
+    ) =>
+      (dayjs(selectedDate).isSame(dayjs()) ||
+        dayjs(selectedDate).isAfter(dayjs())) &&
+      selectedTime &&
+      selectedGuests >= 0 &&
+      selectedOccasion;
+
+    expect(
+      validCheck(validDate, validTime, validGuests, validOccasion)
+    ).toBeTruthy();
+    expect(
+      validCheck(invalidDate, invalidTime, invalidGuests, invalidOccasion)
+    ).toBeFalsy();
+    expect(
+      validCheck(invalidDate, validTime, validOccasion, invalidOccasion)
+    ).toBeFalsy();
+  });
 });

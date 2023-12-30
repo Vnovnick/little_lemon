@@ -20,6 +20,7 @@ export default function ConfirmedBooking() {
           <Link
             to="/booking"
             className="px-5 py-1 bg-mustard rounded-2xl text-center font-bold"
+            aria-label="On Click Back to Reservations"
           >
             Back To Reservations
           </Link>
