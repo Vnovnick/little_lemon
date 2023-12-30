@@ -3,31 +3,26 @@ import Nav from "../Nav";
 import Footer from "../Footer";
 import BookingForm from "./BookingForm";
 import BookingHeader from "./BookingHeader";
+import { fetchApi, submitApi } from "../../utils/fakeApi";
+import dayjs from "dayjs";
 
 export default function BookingPage() {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(dayjs().format("YYYY-MM-DD"));
   const updateTimes = (state, action) => {
     switch (action.type) {
       case "changed_date":
-        return state;
+        return fetchApi(date);
       default:
         return state;
     }
   };
-  const initializeTimes = () => [
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-    "23:00",
-  ];
-
+  const initializeTimes = (selectedDate) => fetchApi(selectedDate);
   const [availableTimes, dispatchTimes] = useReducer(
     updateTimes,
-    initializeTimes()
+    initializeTimes(date)
   );
+
+  const submitForm = (formData) => submitApi(formData);
   return (
     <div className="flex flex-col h-screen">
       <Nav />
@@ -37,6 +32,7 @@ export default function BookingPage() {
         dispatchTimes={dispatchTimes}
         date={date}
         setDate={setDate}
+        submitForm={submitForm}
       />
       <Footer />
     </div>

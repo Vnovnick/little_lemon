@@ -1,17 +1,24 @@
 import React, { useState } from "react";
+import { submitApi } from "../../utils/fakeApi";
+import { useNavigate } from "react-router-dom";
 
 export default function BookingForm({
   availableTimes,
   date,
   setDate,
   dispatchTimes,
+  submitForm,
 }) {
   const [time, setTime] = useState("17:00");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (submitForm({ date, time, guests, occasion })) {
+      navigate("/booking-confirmed");
+    }
   };
 
   return (
@@ -25,6 +32,7 @@ export default function BookingForm({
       <input
         type="date"
         id="res-date"
+        name="dateInput"
         value={date}
         onChange={(e) => {
           setDate(e.target.value);
@@ -36,6 +44,7 @@ export default function BookingForm({
       </label>
       <select
         id="res-time"
+        name="timeInput"
         value={time}
         onChange={(e) => setTime(e.target.value)}
       >
@@ -48,6 +57,7 @@ export default function BookingForm({
       </label>
       <input
         type="number"
+        name="guestInput"
         placeholder="1"
         min="1"
         max="10"
@@ -60,6 +70,7 @@ export default function BookingForm({
       </label>
       <select
         id="occasion"
+        name="occasionInput"
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
       >
@@ -68,7 +79,7 @@ export default function BookingForm({
       </select>
       <button
         type="submit"
-        className="px-5 py-1 bg-mustard rounded-2xl"
+        className="px-5 py-1 bg-mustard rounded-2xl font-bold"
         data-testid="reservation-button"
       >
         Make Your Reservation

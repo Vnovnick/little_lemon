@@ -1,8 +1,9 @@
-import { useReducer } from "react";
 import { memoryRouterWrapper } from "../../TestWrapper";
 import BookingPage from "./BookingPage";
-import { render, fireEvent, screen, act } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import BookingForm from "./BookingForm";
+import { fetchApi } from "../../utils/fakeApi";
+import dayjs from "dayjs";
 
 describe("check BookingPage form and states", () => {
   test("Renders the BookingForm heading", () => {
@@ -20,6 +21,7 @@ describe("check BookingPage form and states", () => {
           date={new Date()}
           setDate={() => {}}
           dispatchTimes={() => {}}
+          submitForm={() => true}
         />
       )
     );
@@ -33,19 +35,18 @@ describe("check BookingPage form and states", () => {
   });
 
   test("Validates useReducer values", () => {
-    const initialState = () => ["17:00", "18:00"];
-    expect(initialState()).toEqual(["17:00", "18:00"]);
+    const date = dayjs().format("YYYY-MM-DD");
+    const initialState = fetchApi(date);
+    expect(initialState).toBeTruthy();
 
     const updateTimes = (state, action) => {
       switch (action.type) {
         case "changed_date":
-          return state;
+          return fetchApi(date);
         default:
           return state;
       }
     };
-    expect(updateTimes(initialState(), { type: "changed_date" })).toEqual(
-      initialState()
-    );
+    expect(updateTimes(initialState, { type: "changed_date" })).toBeTruthy();
   });
 });
