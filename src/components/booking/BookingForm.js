@@ -66,7 +66,11 @@ export default function BookingForm({
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <button type="submit" className="px-5 py-1 bg-mustard rounded-2xl">
+      <button
+        type="submit"
+        className="px-5 py-1 bg-mustard rounded-2xl"
+        data-testid="reservation-button"
+      >
         Make Your Reservation
       </button>
     </form>
