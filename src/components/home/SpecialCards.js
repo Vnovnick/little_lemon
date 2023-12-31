@@ -3,7 +3,11 @@ import React from "react";
 export default function SpecialCards({ card }) {
   return (
     <section className="flex flex-col max-w-[400px]">
-      <img src={card.image} alt={card.name} className="rounded-t-2xl" />
+      <img
+        src={card.image}
+        alt={card.name}
+        className="rounded-t-2xl w-full h-[190px] object-cover"
+      />
       <section className="bg-[#EDEFEE] pt-5 px-6 h-[300px] flex flex-col">
         <section className="flex justify-between font-bold flex-wrap">
           <p className="">{card.name}</p>
